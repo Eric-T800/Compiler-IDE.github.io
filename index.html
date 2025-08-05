@@ -115,7 +115,7 @@
                 
                 <div class="flex items-center space-x-4">
                     <a href="#download" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
-                        <i class="fas fa-download mr-2"></i>立即下载
+                        <i class="fas fa-download mr-2"></i>立即下载最新版
                     </a>
                     <button id="mobile-menu" class="md:hidden text-gray-600" title="打开菜单">
                         <i class="fas fa-bars text-xl"></i>
@@ -141,7 +141,7 @@
                 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 mb-16 fade-in">
                     <a href="#download" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition duration-300 shadow-lg download-btn">
-                        <i class="fas fa-download mr-2"></i>免费下载 <span class="version-display">v${latestVersion || '1.0.0-Beta1'}</span>
+                        <i class="fas fa-download mr-2"></i>立即下载
                     </a>
                     <a href="#features" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
                         <i class="fas fa-rocket mr-2"></i>探索功能
@@ -223,6 +223,7 @@
                     <div class="text-center mb-6">
                         <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                             <i class="fab fa-windows text-white text-2xl"></i>
+
                         </div>
                         <h3 class="text-2xl font-bold text-gray-800 mb-2">Windows 版本</h3>
                         <p class="text-gray-600">支持 Windows 10/11 (64位)</p>
@@ -418,7 +419,7 @@
 
             const downloadBtns = document.querySelectorAll('.download-btn');
             downloadBtns.forEach(btn => {
-                btn.innerHTML = `<i class="fas fa-download mr-2"></i>下载 v${latestVersion}`;
+                btn.innerHTML = `<i class="fas fa-download mr-2"></i>下载最新版`;
             });
 
             if (downloadInfo && downloadInfo.size_mb) {
@@ -656,12 +657,12 @@
                 if (downloadInfo && downloadInfo.downloadUrl) {
                     downloadUrl = downloadInfo.downloadUrl;
                 } else {
-                    const filename = downloadInfo ? downloadInfo.filename : `OICPP-${latestVersion}-Setup.exe`;
+                    const filename = downloadInfo ? downloadInfo.filename : `CompilerCPP-${latestVersion}-Setup.exe`;
                     downloadUrl = `/api/downloadUpdateFile?version=${latestVersion}&filename=${filename}`;
                 }
                 window.open(downloadUrl, '_blank');
                 
-                this.innerHTML = `<i class="fas fa-download mr-2"></i>下载 v${latestVersion}`;
+                this.innerHTML = `<i class="fas fa-download mr-2"></i>下载最新版`;
                 this.disabled = false;
             }, 2000);
         });
