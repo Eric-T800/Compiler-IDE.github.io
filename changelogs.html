@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>更新日志 v1.0.0-Beta1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #30343f;
+            --accent-color: #f5d061;
+            --background-color: #f9f9f9;
+            --card-color: #ffffff;
+            --text-color: #333333;
+            --subtext-color: #7f8c8d;
+            --border-color: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e9ed 100%);
+            color: var(--text-color);
+            line-height: 1.7;
+            min-height: 100vh;
+            padding: 30px;
+            display: flex;
+            flex-direction: column; /* 修改为竖版排版 */
+            align-items: center;
+            gap: 30px; /* 添加日志框之间的间距 */
+        }
+
+        .container {
+            background-color: var(--card-color);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 40px;
+            width: 100%;
+            max-width: 750px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .header {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .version {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .date {
+            font-size: 16px;
+            color: var(--subtext-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            background-color: var(--accent-color);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .feature-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding: 12px 12px 12px 40px;
+            margin-bottom: 12px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .feature-list li:hover {
+            background-color: #f8f9fa;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-size: 18px;
+            font-weight: bold;
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 20px;
+            }
+
+            .container {
+                padding: 30px 20px;
+            }
+
+            .version {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="version">v1.0.0-Beta3</div>
+            <div class="date">2026-08-05 <span class="badge">BETA</span></div>
+        </div>
+        <ul class="feature-list">
+            <li> 修复了一些 bug，优化用户体验 </li>
+            <li> 新增了代码语法高亮 </li>
+            <li>支持最新的 C++23</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="version">v1.0.0-Beta2</div>
+            <div class="date">2026-07-28 <span class="badge">BETA</span></div>
+        </div>
+        <ul class="feature-list">
+            <li> 修复了一些 bug，优化用户体验 </li>
+            <li> 优化了部分界面的显示 </li>
+            <li>支持 C++20</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="version">v1.0.0-Beta1</div>
+            <div class="date">2026-03-12 <span class="badge">BETA</span></div>
+        </div>
+        <ul class="feature-list">
+            <li>基础代码编辑运行功能</li>
+            <li>一键编译运行</li>
+            <li>支持 C++17</li>
+            <li>编译错误提示</li>
+        </ul>
+    </div>
+</body>
+</html>
